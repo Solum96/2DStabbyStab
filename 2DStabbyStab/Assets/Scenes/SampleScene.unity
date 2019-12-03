@@ -420,10 +420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6273917837146031314, guid: 6a6b5c83476c82447a917c8e6f695857,
+    - target: {fileID: 6273917837146031308, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
-      propertyPath: m_Name
-      value: Player
+      propertyPath: m_MaskInteraction
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
@@ -438,12 +438,12 @@ PrefabInstance:
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.023
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.26580846
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
@@ -458,7 +458,7 @@ PrefabInstance:
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96402586
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
@@ -468,7 +468,7 @@ PrefabInstance:
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 30.83
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6273917837146031309, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
@@ -480,10 +480,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6273917837146031308, guid: 6a6b5c83476c82447a917c8e6f695857,
+    - target: {fileID: 6273917837146031314, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
-      propertyPath: m_MaskInteraction
-      value: 0
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a6b5c83476c82447a917c8e6f695857, type: 3}
