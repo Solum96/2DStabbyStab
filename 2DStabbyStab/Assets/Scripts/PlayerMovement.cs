@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody myRigidbody;
+    private Collider playerCollider;
+    private float distanceToGround;
     public float speed;
     public float jump;
     private Vector3 change;
@@ -13,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        playerCollider = GetComponent<CapsuleCollider>();
+        distanceToGround = playerCollider.bounds.extents.y;
     }
     void Update()
     {
@@ -23,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         { 
             MovePlayer(); 
         }
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             PlayerJump();
         }
@@ -36,9 +40,11 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerJump()
     {
-        if(myRigidbody.velocity.y <= 0.3)
-        {
-            myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
-        }
+        myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, distanceToGround + 0.2f);
     }
 }
