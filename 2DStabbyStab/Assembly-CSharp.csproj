@@ -44,7 +44,8 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <ItemGroup>     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+  <ItemGroup>     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/nilss/Documents/Programmering/2DStabbyStab/2DStabbyStab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
