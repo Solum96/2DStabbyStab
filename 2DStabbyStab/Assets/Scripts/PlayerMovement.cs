@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown("w"))
         {
-            myRigidbody.velocity = transform.up * speed;
+            myRigidbody.transform.position = new Vector3(0,1,0) * speed;
         }
     }
 }
