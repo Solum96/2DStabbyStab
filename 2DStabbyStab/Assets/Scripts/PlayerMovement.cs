@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jump;
     private Vector3 change;
+    private Animator animator;
     // Update is called once per frame
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
         distanceToGround = playerCollider.bounds.extents.y;
@@ -26,7 +28,12 @@ public class PlayerMovement : MonoBehaviour
         if(change != Vector3.zero)
         { 
             MovePlayer(); 
+            animator.SetFloat("moveX", change.x);
+            animator.SetFloat("moveZ", change.z);
+            animator.SetBool("isWalking", true); 
         }
+        else { animator.SetBool("isWalking", false); }
+
         if(Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             PlayerJump();
@@ -40,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerJump()
     {
+        myRigidbody.velocity.Normalize();
         myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
     }
 
