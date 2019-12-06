@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     private Vector3 change;
     private Animator animator;
-    // Update is called once per frame
+    //Add comment
 
     void Start()
     {
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerJump()
     {
-        //currentState = PlayerState.Jumping;
+        currentState = PlayerState.Jumping;
         myRigidbody.velocity.Normalize();
         myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
     }
