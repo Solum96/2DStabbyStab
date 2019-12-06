@@ -1142,6 +1142,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4295442283011896563, guid: 6a6b5c83476c82447a917c8e6f695857,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4295442283011896567, guid: 6a6b5c83476c82447a917c8e6f695857,
         type: 3}
       propertyPath: jump
