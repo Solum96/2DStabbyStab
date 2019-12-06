@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         currentState = PlayerState.Walking;
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         myRigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
         distanceToGround = playerCollider.bounds.extents.y;
@@ -28,15 +28,14 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.z = Input.GetAxisRaw("Vertical");
-        if(currentState == PlayerState.Walking)
-        {
-            UpdateAnimationAndMove();
-        }
-        else if(Input.GetKeyDown(KeyCode.N) && currentState != PlayerState.Attacking)
+        if(Input.GetKeyDown(KeyCode.Mouse0) && currentState != PlayerState.Attacking)
         {
             StartCoroutine(AttackCo());
         }
-
+        else if(currentState == PlayerState.Walking)
+        {
+            UpdateAnimationAndMove();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && currentState == PlayerState.Walking)
         {
@@ -50,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.Attacking;
         yield return null;
         animator.SetBool("isAttacking", false);
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.35f);
         currentState = PlayerState.Walking;
     }
 
@@ -74,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerJump()
     {
-        currentState = PlayerState.Jumping;
+        //currentState = PlayerState.Jumping;
         myRigidbody.velocity.Normalize();
         myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
     }
