@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     public float jump;
     private Vector3 change;
     private Animator animator;
-    //Add comment
 
     void Start()
     {
