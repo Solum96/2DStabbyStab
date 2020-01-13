@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(AttackCo());
         }
-        else if(currentState == PlayerState.Walking)
+        else if(currentState == PlayerState.Walking || currentState == PlayerState.Jumping)
         {
             UpdateAnimationAndMove();
         }
