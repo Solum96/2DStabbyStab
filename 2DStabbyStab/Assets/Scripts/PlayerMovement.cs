@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerJump();
         }
+
+        if (PlayerState)
     }
 
     IEnumerator AttackCo()
@@ -73,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerJump()
     {
-        //currentState = PlayerState.Jumping;
+        currentState = PlayerState.Jumping;
         myRigidbody.velocity.Normalize();
         myRigidbody.AddForce(new Vector3(0,1,0) * jump, ForceMode.VelocityChange);
     }
