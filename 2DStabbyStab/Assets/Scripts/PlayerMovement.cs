@@ -42,7 +42,13 @@ public class PlayerMovement : MonoBehaviour
             PlayerJump();
         }
 
-        if (PlayerState)
+        if (currentState == PlayerState.Jumping)
+        {
+            if (myRigidbody.velocity.y < 0 && IsGrounded())
+            {
+                currentState = PlayerState.Walking;
+            } 
+        }
     }
 
     IEnumerator AttackCo()
